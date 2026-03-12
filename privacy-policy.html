@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>SecretSifter — Privacy Policy</title>
+  <style>
+    body {
+      font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+      max-width: 760px;
+      margin: 60px auto;
+      padding: 0 24px;
+      color: #222;
+      line-height: 1.7;
+    }
+    h1 { font-size: 26px; border-bottom: 2px solid #eee; padding-bottom: 12px; }
+    h2 { font-size: 17px; margin-top: 32px; color: #333; }
+    p, li { font-size: 15px; color: #444; }
+    ul { padding-left: 20px; }
+    .highlight {
+      background: #f0f7ff;
+      border-left: 4px solid #0070f3;
+      padding: 12px 16px;
+      border-radius: 4px;
+      margin: 20px 0;
+    }
+    footer { margin-top: 60px; font-size: 13px; color: #888; border-top: 1px solid #eee; padding-top: 16px; }
+  </style>
+</head>
+<body>
+
+<h1>SecretSifter &mdash; Privacy Policy</h1>
+<p><strong>Effective date:</strong> March 11, 2026</p>
+
+<div class="highlight">
+  <strong>Summary:</strong> SecretSifter does not collect, transmit, or share any data.
+  All findings are stored exclusively in your local browser and never leave your device.
+</div>
+
+<h2>1. What SecretSifter Does</h2>
+<p>
+  SecretSifter is a browser extension designed for security professionals and penetration testers.
+  It intercepts network responses (JavaScript files, JSON APIs, XML responses, HTML pages, and
+  WebSocket frames) in the active browser tab and scans them for exposed secrets such as API keys,
+  tokens, passwords, and credentials using pattern-matching rules.
+</p>
+
+<h2>2. Data Collection</h2>
+<p>SecretSifter does <strong>not</strong> collect any personal data. Specifically:</p>
+<ul>
+  <li>No data is transmitted to any external server, including the developer's servers.</li>
+  <li>No analytics, telemetry, or usage tracking of any kind is performed.</li>
+  <li>No user accounts are created or required.</li>
+  <li>No browsing history is recorded beyond what is temporarily held in local browser storage for the current session.</li>
+</ul>
+
+<h2>3. Local Storage</h2>
+<p>
+  SecretSifter stores the following data <strong>locally in your browser only</strong>
+  (using <code>chrome.storage.local</code> / <code>browser.storage.local</code>):
+</p>
+<ul>
+  <li>Scan findings (secret matches detected during your browsing session)</li>
+  <li>User settings (CDN blocklist customizations, noise key list)</li>
+  <li>The list of hostnames you have enabled scanning on</li>
+</ul>
+<p>
+  This data never leaves your device. You can clear all stored findings at any time
+  using the "Clear" button in the extension popup or DevTools panel.
+</p>
+
+<h2>4. Permissions Used</h2>
+<ul>
+  <li><strong>debugger</strong> — Used to attach to the Chrome DevTools Protocol (CDP) to
+      intercept network responses in the active tab. This is required for full network coverage
+      and is only activated when you explicitly enable scanning on a tab.</li>
+  <li><strong>tabs</strong> — Used to associate scan findings with the correct browser tab.</li>
+  <li><strong>storage</strong> — Used to persist findings and settings locally in the browser.</li>
+  <li><strong>activeTab / scripting</strong> — Used to inject the network interceptor into the
+      current tab's page context when scanning is enabled.</li>
+  <li><strong>&lt;all_urls&gt;</strong> — Required so the extension can operate on any website
+      the user chooses to scan. Scanning is always opt-in per tab.</li>
+</ul>
+
+<h2>5. Third-Party Services</h2>
+<p>
+  SecretSifter does not use any third-party SDKs, analytics services, advertising networks,
+  or external APIs. The extension operates entirely offline.
+</p>
+
+<h2>6. Children's Privacy</h2>
+<p>
+  This extension is intended for security professionals and is not directed at children
+  under the age of 13. We do not knowingly collect any information from children.
+</p>
+
+<h2>7. Changes to This Policy</h2>
+<p>
+  If this privacy policy is updated, the effective date above will be revised.
+  Significant changes will be noted in the extension's version release notes.
+</p>
+
+<h2>8. Contact</h2>
+<p>
+  For questions about this privacy policy, please open an issue on the
+  <a href="https://github.com/secretsifter/secretsifter-extension">GitHub repository</a>
+  or contact the developer directly via GitHub.
+</p>
+
+<footer>
+  SecretSifter &mdash; Privacy Policy &mdash; Last updated March 11, 2026
+</footer>
+
+</body>
+</html>
